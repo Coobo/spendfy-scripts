@@ -1,0 +1,14 @@
+{
+  "name": "@coobo/scripts",
+  "version": "0.0.1-alpha",
+  "repository": "git@github.com:Coobo/spendfy-scripts.git",
+  "author": "VIMGAS <victormoraesgs@hotmail.com>",
+  "license": "MIT",
+  "private": false,
+  "bin": {
+    "@coobo/scripts": "./bin/spendfy-scripts.js"
+  },
+  "dependencies": {
+    "cross-spawn": "^6.0.5"
+  }
+}
