@@ -1,6 +1,6 @@
 {
   "name": "@coobo/scripts",
-  "version": "0.0.1-alpha",
+  "version": "0.0.3-alpha",
   "repository": "git@github.com:Coobo/spendfy-scripts.git",
   "author": "VIMGAS <victormoraesgs@hotmail.com>",
   "license": "MIT",
@@ -9,6 +9,30 @@
     "@coobo/scripts": "./bin/spendfy-scripts.js"
   },
   "dependencies": {
-    "cross-spawn": "^6.0.5"
+    "@babel/core": "7.2.2",
+    "@babel/register": "^7.0.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "9.0.0",
+    "babel-jest": "23.6.0",
+    "babel-plugin-named-asset-import": "^0.3.1",
+    "babel-preset-react-app": "^7.0.1",
+    "bfj": "6.1.1",
+    "dotenv": "6.0.0",
+    "dotenv-expand": "4.2.0",
+    "eslint": "5.12.0",
+    "fork-ts-checker-webpack-plugin-alt": "0.4.14",
+    "fs-extra": "7.0.1",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "23.6.0",
+    "jest-pnp-resolver": "1.0.2",
+    "jest-resolve": "23.6.0",
+    "jest-watch-typeahead": "^0.2.1",
+    "nodemon": "^1.18.10",
+    "react-app-polyfill": "^0.2.1",
+    "react-dev-utils": "^7.0.3",
+    "resolve": "1.10.0"
+  },
+  "optionalDependencies": {
+    "fsevents": "1.2.4"
   }
 }

@@ -10,7 +10,6 @@ const chalk = require('chalk');
 const execSync = require('child_process').execSync;
 const spawn = require('cross-spawn');
 const os = require('os');
-const verifyTypeScriptSetup = require('./utils/verifyTypeScriptSetup');
 
 function isInGitRepository() {
   try {
@@ -78,7 +77,8 @@ module.exports = function(
   appPackage.scripts = {
     watch: 'spendfy-scripts watch',
     build: 'spendfy-scripts build',
-    test: 'spendfy-scripts test'
+    test: 'spendfy-scripts test',
+    start: 'node dist/app.js'
   };
 
   // Setup the eslint config
