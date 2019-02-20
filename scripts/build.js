@@ -4,11 +4,12 @@ if (!process.env.NODE_ENV) process.env.NODE_ENV = 'production';
 const env = process.env.BABEL_ENV || process.env.NODE_ENV;
 
 const paths = require('../config/paths');
+const path = require('path');
 const chalk = require('chalk');
 
 const compiler = require('@coobo/compiler').compiler;
 compiler({
-  basePath: paths.resolve(__dirname, './../'),
+  basePath: path.resolve(__dirname, './../'),
   outDir: path.resolve(paths.appPath, './dist/'),
   verbose: true,
   filenames: [path.resolve(paths.appPath), './src']
