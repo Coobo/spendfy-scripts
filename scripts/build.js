@@ -6,7 +6,7 @@ const env = process.env.BABEL_ENV || process.env.NODE_ENV;
 const paths = require('../config/paths');
 const chalk = require('chalk');
 
-const compile = require('@coobo/compiler').compiler;
+const compiler = require('@coobo/compiler').compiler;
 compiler({
   basePath: paths.resolve(__dirname, './../'),
   outDir: path.resolve(paths.appPath, './dist/'),
