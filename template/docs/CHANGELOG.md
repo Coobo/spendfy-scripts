@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Initial Scripts and configurations based on `create-spendfy-service`.
+- Initial Scripts and configurations based on `create-spendfy-service` defaults.
 
 <!-- [unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.0.1-alpha...HEAD
 [0.0.2]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.0.1...v0.0.2 -->

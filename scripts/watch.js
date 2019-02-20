@@ -9,13 +9,14 @@ process.on('unhandledRejection', (err) => {
 
 const nodemon = require('nodemon');
 const paths = require('../config/paths');
+const path = require('path');
 const chalk = require('chalk');
 
 nodemon({
   restartable: 'rs',
   ignore: ['.git', 'node_modules/**/node_modules', '.test.js'],
   verbose: true,
-  watch: [paths.appPath],
+  watch: [path.join(paths.appPath, 'src/')],
   env: {
     NODE_ENV: 'development'
   },

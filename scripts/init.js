@@ -78,7 +78,7 @@ module.exports = function(
     watch: 'spendfy-scripts watch',
     build: 'spendfy-scripts build',
     test: 'spendfy-scripts test',
-    start: 'node dist/app.js'
+    start: 'node dist/server.js'
   };
 
   // Setup the eslint config
