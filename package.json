@@ -1,6 +1,6 @@
 {
   "name": "@coobo/scripts",
-  "version": "0.0.14-alpha",
+  "version": "0.0.15-alpha",
   "repository": "git@github.com:Coobo/spendfy-scripts.git",
   "author": "VIMGAS <victormoraesgs@hotmail.com>",
   "license": "MIT",
@@ -12,7 +12,7 @@
     "@babel/plugin-proposal-class-properties": "^7.3.3",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
     "@babel/preset-env": "^7.3.1",
-    "@coobo/compiler": "^0.0.1-alpha",
+    "@coobo/compiler": "^0.0.3-alpha",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "9.0.0",
     "babel-jest": "23.6.0",
