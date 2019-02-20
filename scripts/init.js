@@ -106,27 +106,27 @@ module.exports = function(
   };
 
   // Setup the babel transpiler
-  appPackage.babel = {
-    presets: [
-      [
-        '@babel/env',
-        {
-          targets: {
-            node: 'current'
-          }
-        }
-      ]
-    ],
-    plugins: [
-      [
-        '@babel/plugin-proposal-class-properties',
-        {
-          spec: true
-        }
-      ],
-      '@babel/plugin-proposal-object-rest-spread'
-    ]
-  };
+  // appPackage.babel = {
+  //   presets: [
+  //     [
+  //       '@babel/env',
+  //       {
+  //         targets: {
+  //           node: 'current'
+  //         }
+  //       }
+  //     ]
+  //   ],
+  //   plugins: [
+  //     [
+  //       '@babel/plugin-proposal-class-properties',
+  //       {
+  //         spec: true
+  //       }
+  //     ],
+  //     '@babel/plugin-proposal-object-rest-spread'
+  //   ]
+  // };
 
   fs.writeFileSync(
     path.join(appPath, 'package.json'),

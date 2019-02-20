@@ -1,23 +1,23 @@
 {
   "name": "@coobo/scripts",
-  "version": "0.0.4-alpha",
+  "version": "0.0.5-alpha",
   "repository": "git@github.com:Coobo/spendfy-scripts.git",
   "author": "VIMGAS <victormoraesgs@hotmail.com>",
   "license": "MIT",
   "private": false,
   "bin": {
-    "@coobo/scripts": "./bin/spendfy-scripts.js"
+    "spendfy-scripts": "./bin/spendfy-scripts.js"
   },
   "dependencies": {
-    "@babel/core": "7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.3.3",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
     "@babel/preset-env": "^7.3.1",
-    "@babel/register": "^7.0.0",
+    "@coobo/compiler": "^0.0.1-alpha",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "9.0.0",
     "babel-jest": "23.6.0",
     "bfj": "6.1.1",
+    "chalk": "^2.4.2",
     "dotenv": "6.0.0",
     "dotenv-expand": "4.2.0",
     "eslint": "5.12.0",
@@ -34,5 +34,28 @@
   },
   "optionalDependencies": {
     "fsevents": "1.2.4"
+  },
+  "spendfy": {
+    "compiler": {
+      "presets": [
+        [
+          "@babel/env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ]
+      ],
+      "plugins": [
+        [
+          "@babel/plugin-proposal-class-properties",
+          {
+            "spec": true
+          }
+        ],
+        "@babel/plugin-proposal-object-rest-spread"
+      ]
+    }
   }
 }
