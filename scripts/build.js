@@ -8,9 +8,7 @@ const path = require('path');
 const chalk = require('chalk');
 
 const compiler = require('@coobo/compiler').compiler;
-// console.log('from', [path.join(paths.appPath, './src/')]);
-// console.log('to', path.join(paths.appPath, './dist/'));
-// console.log('basePath', path.resolve(__dirname, './../'));
+
 compiler({
   basePath: path.resolve(__dirname, './../'),
   outDir: path.join(paths.appPath, './dist/'),

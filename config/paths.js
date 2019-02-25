@@ -60,19 +60,12 @@ const resolveModule = (resolveFn, filePath) => {
 module.exports = {
   dotenv: resolveApp('.env'),
   appPath: resolveApp('.'),
-  appBuild: resolveApp('build'),
-  appPublic: resolveApp('public'),
-  appHtml: resolveApp('public/index.html'),
+  appBuild: resolveApp('dist'),
   appIndexJs: resolveModule(resolveApp, 'src/index'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
-  appTsConfig: resolveApp('tsconfig.json'),
   yarnLockFile: resolveApp('yarn.lock'),
-  testsSetup: resolveModule(resolveApp, 'src/setupTests'),
-  proxySetup: resolveApp('src/setupProxy.js'),
-  appNodeModules: resolveApp('node_modules'),
-  publicUrl: getPublicUrl(resolveApp('package.json')),
-  servedPath: getServedPath(resolveApp('package.json'))
+  appNodeModules: resolveApp('node_modules')
 };
 
 const resolveOwn = (relativePath) =>
@@ -81,56 +74,18 @@ const resolveOwn = (relativePath) =>
 module.exports = {
   dotenv: resolveApp('.env'),
   appPath: resolveApp('.'),
-  appBuild: resolveApp('build'),
-  appPublic: resolveApp('public'),
-  appHtml: resolveApp('public/index.html'),
+  appBuild: resolveApp('dist'),
   appIndexJs: resolveModule(resolveApp, 'src/index'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
-  appTsConfig: resolveApp('tsconfig.json'),
   yarnLockFile: resolveApp('yarn.lock'),
-  testsSetup: resolveModule(resolveApp, 'src/setupTests'),
-  proxySetup: resolveApp('src/setupProxy.js'),
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
   ownPath: resolveOwn('.'),
-  ownNodeModules: resolveOwn('node_modules'),
-  appTypeDeclarations: resolveApp('src/react-app-env.d.ts'),
-  ownTypeDeclarations: resolveOwn('lib/react-app.d.ts')
+  ownNodeModules: resolveOwn('node_modules')
 };
 
 const ownPackageJson = require('../package.json');
-const reactScriptsPath = resolveApp(`node_modules/${ownPackageJson.name}`);
-const reactScriptsLinked =
-  fs.existsSync(reactScriptsPath) &&
-  fs.lstatSync(reactScriptsPath).isSymbolicLink();
-
-if (
-  !reactScriptsLinked &&
-  __dirname.indexOf(path.join('packages', 'react-scripts', 'config')) !== -1
-) {
-  module.exports = {
-    dotenv: resolveOwn('template/.env'),
-    appPath: resolveApp('.'),
-    appBuild: resolveOwn('../../build'),
-    appPublic: resolveOwn('template/public'),
-    appHtml: resolveOwn('template/public/index.html'),
-    appIndexJs: resolveModule(resolveOwn, 'template/src/index'),
-    appPackageJson: resolveOwn('package.json'),
-    appSrc: resolveOwn('template/src'),
-    appTsConfig: resolveOwn('template/tsconfig.json'),
-    yarnLockFile: resolveOwn('template/yarn.lock'),
-    testsSetup: resolveModule(resolveOwn, 'template/src/setupTests'),
-    proxySetup: resolveOwn('template/src/setupProxy.js'),
-    appNodeModules: resolveOwn('node_modules'),
-    publicUrl: getPublicUrl(resolveOwn('package.json')),
-    servedPath: getServedPath(resolveOwn('package.json')),
-    ownPath: resolveOwn('.'),
-    ownNodeModules: resolveOwn('node_modules'),
-    appTypeDeclarations: resolveOwn('template/src/react-app-env.d.ts'),
-    ownTypeDeclarations: resolveOwn('lib/react-app.d.ts')
-  };
-}
 
 module.exports.moduleFileExtensions = moduleFileExtensions;
