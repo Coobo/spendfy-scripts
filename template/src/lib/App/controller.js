@@ -1,6 +1,3 @@
-import Validator from './../validation/validator';
-const validator = new Validator();
-
 /**
  * The app's Basic Controller methods and properties
  * @class
@@ -10,22 +7,12 @@ export default class BaseController {
    * Binds this directive to all of controllers methods.
    * @constructor
    */
-  constructor() {
-    // let methods = H.methodsOf(this);
-    // for (var key of methods) {
-    //   this[key] = this[key].bind(this);
-    // }
-  }
-
-  /**
-   * Uses the validator class to validate a set of inputs against a set of rules
-   * @param {string|Object} input
-   * @param {string[]} rules
-   * @returns {boolean|validator}
-   */
-  validateFormInput(input, rules) {
-    return validator.validateForm(input, rules);
-  }
+  // constructor() {
+  //   let methods = H.methodsOf(this);
+  //   for (var key of methods) {
+  //     this[key] = this[key].bind(this);
+  //   }
+  // }
 
   /**
    * Checks if the given fields of a provided data matches any records in the model's database.
@@ -33,7 +20,7 @@ export default class BaseController {
    * @param {string[]} fields - The fields that are not suposed to be duplicated
    * @param {Sequelize.Model} Model - The model to be tested on
    */
-  async catchDuplicates(data, fields, Model) {
+  catchDuplicates = async (data, fields, Model) => {
     return new Promise(async (resolve, reject) => {
       for (let field in fields) {
         let currentField = fields[field];
@@ -68,7 +55,7 @@ export default class BaseController {
       }
       resolve(null);
     });
-  }
+  };
 
   /**
    * Asserts if the requesting user is a admin or matches the requested userId.

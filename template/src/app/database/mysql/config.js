@@ -1,5 +1,6 @@
 const chalk = require('chalk');
 const yn = require('yn');
+const { sql: logger } = require('@coobo/spendfy-logger');
 
 function styleArrsAndDots(value) {
   if (value.indexOf('->') > -1) {
@@ -40,7 +41,7 @@ function highlight(string) {
     },
     {
       regex: [/,/gm, /\(/gm],
-      callback: (value) => value + '\n'
+      callback: (value) => value
     },
     {
       regex: [
@@ -51,7 +52,7 @@ function highlight(string) {
         /INNER JOIN/gm,
         /\)/gm
       ],
-      callback: (value) => '\n ' + value
+      callback: (value) => value
     },
     {
       regex: [
@@ -94,10 +95,11 @@ function highlight(string) {
   return string;
 }
 
-function log(string) {
+function log(string, query) {
   string = highlight(string);
-  console.log('\n');
-  console.log(string);
+  if (typeof logger[query.type] === 'function')
+    logger[query.type]({ message: 'Executing Query', query: string });
+  else console.log(string);
 }
 
 console.log(process.env.NODE_ENV);
@@ -114,7 +116,7 @@ module.exports = {
     seederStorageTableName: process.env.SEQUELIZE_SEEDER_STORAGE_TABLENAME,
     migrationStorageTableName:
       process.env.SEQUELIZE_MIGRATION_STORAGE_TABLENAME,
-    logging: console.log //yn(process.env.SEQUELIZE_LOGGING) ? log : false
+    logging: log //yn(process.env.SEQUELIZE_LOGGING) ? log : false
   },
   staging: {
     username: process.env.SEQUELIZE_USERNAME,
@@ -153,6 +155,6 @@ module.exports = {
     seederStorageTableName: process.env.SEQUELIZE_SEEDER_STORAGE_TABLENAME,
     migrationStorageTableName:
       process.env.SEQUELIZE_MIGRATION_STORAGE_TABLENAME,
-    logging: yn(process.env.SEQUELIZE_LOGGING) ? console.log : false
+    logging: false //yn(process.env.SEQUELIZE_LOGGING) ? console.log : false
   }
 };

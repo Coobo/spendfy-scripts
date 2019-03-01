@@ -1,13 +1,8 @@
 import express from 'express';
+import controller from './../../app/controllers/.controller.example';
 
 const router = express.Router();
 
-import Auther from './../../lib/authentication/authenticator';
-import Controller from './../../app/controllers/.controller.example';
-
-const auther = new Auther();
-const controller = new AccountsController();
-
-router.route('/list').get(controller.action);
+router.route('/route').get(controller.action);
 
 export default router;

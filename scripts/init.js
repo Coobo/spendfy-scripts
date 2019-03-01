@@ -77,10 +77,10 @@ module.exports = function(
   appPackage.scripts = {
     watch: 'spendfy-scripts watch',
     build: 'spendfy-scripts build',
-    test: 'jest --env=jsdom',
-    'test:watch': 'jest --env=jsdom --watch',
-    'test:coverage': 'jest --env=jsdom --coverage',
-    'test:memory': 'jest --env=jsdom --logHeapUsage',
+    test: 'yarn run build && jest --env=node',
+    'test:watch': 'yarn run build && jest --env=node --watch',
+    'test:coverage': 'yarn run build && jest --env=node --coverage',
+    'test:memory': 'yarn run build && jest --env=node --logHeapUsage',
     start: 'node dist/server.js'
   };
 

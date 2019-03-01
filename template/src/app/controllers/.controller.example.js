@@ -1,17 +1,13 @@
-import BaseController from './../../lib/App/controller';
+import db from './../database/mysql/models';
+import { app as logger } from '@coobo/spendfy-logger';
 
+const __EXAMPLECONTROLLER__ = exports;
 /**
- * Description goes here
- * @class
- * @extends BaseController
+ * Index Function of Controller
+ * @argument {Express.Request} req - Express Controller Request Object
+ * @argument {Object} req.body - The request's Body
+ * @argument {Express.Response} res - Express Controller Response Object
  */
-export default class __ControllerName__ extends BaseController {
-  /**
-   * Index Function of Controller
-   * @argument {app.request} req - Express Controller Request Object
-   * @argument {app.response} res - Express Controller Response Object
-   */
-  async index(req, res) {
-    /* Index Method */
-  }
-}
+__EXAMPLECONTROLLER__.__CONTROLLERMETHOD__ = async (req, res) => {
+  // CODE GOES HERE
+};

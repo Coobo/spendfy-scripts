@@ -1,5 +1,7 @@
 if (!process.env.NODE_ENV) process.env.NODE_ENV = 'development';
+
 const { app: logger } = require('@coobo/spendfy-logger');
+
 if (process.env.NODE_ENV === 'development') {
   logger.info({
     message: 'Loading .env file.',

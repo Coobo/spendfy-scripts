@@ -1,5 +1,6 @@
-process.env.NODE_ENV = 'development';
+process.env.NODE_ENV = 'testing';
 require('dotenv').config();
+
 const request = require('supertest');
 const app = require('./../dist/app');
 
