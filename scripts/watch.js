@@ -26,7 +26,7 @@ nodemon({
 
 nodemon
   .on('start', () => console.log(chalk.green('Service has started')))
-  .on('quit', () => console.log(chalk.orange('Service has quit.')))
+  .on('quit', () => console.log(chalk.red('Service has quit.')))
   .on('restart', (files) =>
     console.log(chalk.cyan('Service restarted due to: ', files))
   );
